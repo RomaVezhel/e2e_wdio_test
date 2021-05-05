@@ -18,9 +18,9 @@ describe('Sign up new customer', function () {
         await funnelPage.setEmail(signUpUserData.getRandomEmail());
         await funnelPage.clickSubmitBtn();
         await funnelPage.popUpIsDisplayed();
-        // await expect(await funnelPage.popUp).to.exist;        // асершн после wait можно не писать если дождались элемент
         await funnelAssertions.checkPopUpTextTY();
         await funnelAssertions.checkPopUpTextInfo();
         await funnelPage.clickPopUpBtn();
+        await funnelPage.popUpIsNotDisplayed();
     });
 });

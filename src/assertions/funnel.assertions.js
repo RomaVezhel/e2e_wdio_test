@@ -16,7 +16,6 @@ class FunnelAssertions {
     async checkPopUpTextInfo() {
         await expect(await funnelPage.getPopUpTextInfo()).to.equal(constants.popUpTextInfo);
     }
-
 }
 
 export const funnelAssertions = new FunnelAssertions();

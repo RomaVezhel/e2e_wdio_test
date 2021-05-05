@@ -53,7 +53,6 @@ class FunnelPage extends Page {
         return $(".nrp__t2")
     }
 
-
     /** methods */
     async setFirstName(value) {
         // await (await this.firstName).waitForDisplayed()
@@ -85,7 +84,7 @@ class FunnelPage extends Page {
     }
 
     async popUpIsDisplayed() {
-        await (await this.$popUp).waitForDisplayed('Expect TY pop is displayed')
+        await (await this.$popUp).waitForDisplayed({ timeout: 10000, timeoutMsg: 'Expect TY pop is displayed' })
     }
 
     async getPopUpTextTY() {
@@ -98,6 +97,10 @@ class FunnelPage extends Page {
 
     async clickPopUpBtn() {
         await (await this.$popUpBtn).click()
+    }
+
+    async popUpIsNotDisplayed() {
+        await (await this.$popUp).waitForDisplayed( { timeout: 10000, reverse: true, timeoutMsg: 'Expect TY pop is not displayed' })
     }
 }
 
