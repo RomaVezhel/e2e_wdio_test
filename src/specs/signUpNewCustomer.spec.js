@@ -1,14 +1,12 @@
-import * as signUpUserData from '../test-data/signUpUserData.js'
-import {funnelPage} from '../pages/funnelPage.js'
-import chai from 'chai'
-import {popUpText} from '../test-data/popUpText.js'
+import * as signUpUserData from "../test-data/signUpUserData.js";
+import {funnelPage} from "../pages/funnelPage.js";
+import {funnelAssertions} from "../assertions/funnel.assertions";
 
-const expect = chai.expect
 
 describe('Sign up new customer', function () {
     it('Page is opened', async function () {
         await funnelPage.open();
-        await expect(funnelPage.url).to.include('funnel_qa_course_work')
+        await funnelAssertions.checkPageOpened();
     });
 
     it('Enter valid data in the registration form', async function () {
@@ -21,8 +19,8 @@ describe('Sign up new customer', function () {
         await funnelPage.clickSubmitBtn();
         await funnelPage.popUpIsDisplayed();
         // await expect(await funnelPage.popUp).to.exist;        // асершн после wait можно не писать если дождались элемент
-        await expect(await funnelPage.getPopUpTextTY()).to.equal(popUpText.popUpTextTY)
-        await expect(await funnelPage.getPopUpTextInfo()).to.equal(popUpText.popUpTextInfo);
+        await funnelAssertions.checkPopUpTextTY();
+        await funnelAssertions.checkPopUpTextInfo();
         await funnelPage.clickPopUpBtn();
     });
 });

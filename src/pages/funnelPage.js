@@ -1,13 +1,11 @@
-import Page from '../pages/page.js'
-import {popUpText} from "../test-data/popUpText";
+import Page from "../pages/page.js";
+import {url} from "../test-data/constants";
 
-const url = "https://promo7.floralital-marketing.com/funnel_qa_course_work/"
 
 class FunnelPage extends Page {
     constructor() {
         super(url);
         this.url = url;
-        // this.popUpText = popUpText;
     }
 
     /** selectors */
@@ -97,7 +95,6 @@ class FunnelPage extends Page {
     async getPopUpTextInfo() {
         return await (await this.$popUpTextInfo).getText()
     }
-
 
     async clickPopUpBtn() {
         await (await this.$popUpBtn).click()
