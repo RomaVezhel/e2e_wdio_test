@@ -15,6 +15,7 @@
   "dependencies": {
     "@babel/traverse": "^7.12.12",
     "@babel/types": "^7.12.12",
+    "@wdio/types": "^7.4.2",
     "webdriverio": "^7.5.1"
   },
   "devDependencies": {
