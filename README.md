@@ -1,4 +1,4 @@
-# e2e_wdio_test
+# e2e_wdio_test_course_work_FE
 
 ## Setup
 
@@ -7,4 +7,4 @@
 
 ## Run test
 
-`wdio run wdio.conf.js`
+- `wdio run wdio.conf.js`
